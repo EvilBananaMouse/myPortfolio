@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
+:root{
+  --purple: #540D6E;
+  --yellow: #FDF900;
+  --green: #005c06;
+  --orange: #FF5600;
+  --blue: #0E79B2;
+  --grey: #e0e0e2;
+  --roadColor: #1f1f1f;
+  
+}
+#container{
+  background-color: var(--yellow);
+  color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#banner{
+  background-color: var(--purple);
+  color: var(--yellow);
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14vh;
+}
+#gap{
+  width: 30vw;
+}
+#menu {
+  height: 40vw;
+  display: grid;
+  grid-template-areas:
+    "left center right";
+  grid-template-columns: 33vw 33vw 33vw;
+  grid-template-rows: 40vw;
+}
+#aboutMe{
+  grid-area: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1500ms;
+  transform: translateX(0);
+}
+#aboutMe:hover, #projects:hover, #contact:hover{
+  cursor: pointer;
+}
+#about::after,
+#me::after,
+#projectsText::after,
+#contactText::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1vw;
+  background-color: var(--grey);
+  opacity: 0;
+  transition: opacity 500ms, transform 500ms;
+}
+#me::after{
+  bottom: 1vh;
+}
+
+#aboutMe:hover #about::after,
+#aboutMe:hover #me::after,
+#projects:hover #projectsText::after,
+#contact:hover #contactText::after{
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+#aboutMe:hover #about::after,
+#aboutMe:focus #about::after,
+#aboutMe:hover #me::after,
+#aboutMe:focus #me::after,
+#projects:hover #projectsText::after,
+#projects:focus #projectsText::after,
+#contact:hover #contactText::after,
+#contact:focus #contactText::after{
+  transform: scale(1);
+}
+#aboutMe:hover, #projects:hover, #contact:hover{
+  animation: float;
+  animation-duration: 2500ms;
+  animation-iteration-count: infinite;
+}
+@keyframes float{
+  0%{
+    transform: translateY(0);
+  }
+  2%{
+    transform: translateY(0);
+  }
+  48%{
+    transform: translateY(-6vh);
+  }
+  52%{
+    transform: translateY(-6vh);
+  }
+  98%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+#aboutMeText{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+}
+#about{
+  font-size: 4vw;
+  position: relative;
+  top: 8vh;
+}
+#me{
+  font-size: 8vw;
+  position: relative;
+  top: 3vh;
+}
+#aboutMeTriangle{
+  border: 12vw solid transparent;
+  border-top: 0;
+  border-bottom: 24vw solid var(--orange);
+  position: absolute;
+}
+#projects{
+  grid-area: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1500ms;
+  transform: translateX(0);
+}
+#projectsCircle{
+  position: absolute;
+  width: 24vw;
+  height: 24vw;
+  background-color: var(--green);
+  border-radius: 50%;
+}
+#projectsText{
+  position: absolute;
+  z-index: 1;
+  font-size: 6vw;
+}
+#contact{
+  grid-area: right;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1500ms;
+  transform: translateX(0);
+}
+#projects.projectsFlyLeft{
+  transform: translateX(-66vw);
+}
+#projects.projectsFlyRight{
+  transform: translateX(66vw);
+}
+#aboutMe.aboutMeFlyLeft{
+  transform: translateX(-66vw);
+}
+#contact.contactFlyRight{
+  transform: translateX(66vw);
+}
+#contact.contactReturn{
+  animation: contactReturn;
+  animation-duration: 2000ms;
+  transform: translateX(0);
+}
+@keyframes contactReturn{
+  0%{
+    transform: translateX(-33vw);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+#contact.contactCenter{
+  animation: contactCenter;
+  animation-duration: 2000ms;
+  transform: translateX(-33vw);
+}
+@keyframes contactCenter {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-33vw);
+  }
+}
+#aboutMe.aboutMeReturn{
+  animation: aboutMeReturn;
+  animation-duration: 2000ms;
+  transform: translateX(0);
+}
+@keyframes aboutMeReturn{
+  0%{
+    transform: translateX(33vw);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+#aboutMe.aboutMeCenter{
+  animation: aboutMeCenter;
+  animation-duration: 2000ms;
+  transform: translateX(33vw);
+}
+@keyframes aboutMeCenter {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(33vw);
+  }
+}
+#contactSquare{
+  position: absolute;
+  width: 24vw;
+  height: 24vw;
+  background-color: var(--blue);
+}
+#contactText{
+  position: absolute;
+  z-index: 1;
+  font-size: 6vw;
+}
+#road{
+  height: 10vh;
+  width: 100vw;
+  background-color: var(--roadColor);
+  position: fixed;
+  left: 0;
+  bottom: -14vh;
+  z-index: 3;
+  border: 2px solid var(--roadColor);
+}
+#van{
+  position: absolute;
+  top: -2vh;
+  left: 0;
+  height: 7vh;
+  width: 10vw;
+  border-radius: 20%;
+  background-color: var(--green);
+}
+.tire{
+  background-color: grey;
+  width: 2vh;
+  height: 2vh;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -0.7vh;
+}
+.animateUp{
+  animation: show 900ms 150ms ease-in forwards;
+}
+@keyframes show{
+  0%{
+    bottom: -14vh;
+  }
+  100%{
+    bottom: -4px;
+}
+}
+#leftTire{
+  left: 1vw;
+}
+#rightTire{
+  right: 1vw;
+}
+#display{
+  margin-left: 15vw;
+  margin-right: 15vw;
+  color: var(--purple);
+  margin-bottom: 10vh;
+}
+
+#projectsExpanded{
+  display: grid;
+  grid-template-areas:
+    "pi czg"
+    "cyoa bc"
+    "pp empty";
+  grid-template-columns: 33vw 33vw;
+  grid-template-rows: 33vw 33vw 33vw;
+  font-size: 2.4vw;
+}
+#projectImitation, #cssZenGarden, #cyoa, #businessCard, #portfolioProject{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 2vw;
+  background-color: var(--purple);
+  position: relative;
+  overflow: hidden;
+}
+#piTitle, #czgTitle, #cyoaTitle, #bcTitle, #ppTitle{
+  background-color: var(--yellow);
+  border: 0.5vw solid var(--purple);
+  transition: all 500ms;
+  z-index: 1;
+  height: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#projectImitation{
+  grid-area: pi;
+}
+#portfolioProject{
+  grid-area: pp;
+}
+#projectImitation img,
+#cssZenGarden img,
+#cyoa img,
+#businessCard img,
+#portfolioProject img{
+  position: absolute;
+  width: 27vw;
+  height: 27vw;
+  transition: all 500ms;
+}
+#projectImitation img,
+#cssZenGarden img,
+#businessCard img,
+#portfolioProject img{
+  object-fit: cover;
+  object-position: center;
+}
+
+#projectImitation:hover img,
+#cssZenGarden:hover img,
+#cyoa:hover img,
+#businessCard:hover img,
+#portfolioProject:hover img{
+  filter: blur(4px) contrast(20%) brightness(2);
+}
+#projectImitation:hover,
+#cssZenGarden:hover,
+#cyoa:hover,
+#businessCard:hover,
+#portfolioProject:hover{
+  cursor: pointer;
+}
+#projectImitation:hover #piTitle,
+#cssZenGarden:hover #czgTitle,
+#cyoa:hover #cyoaTitle,
+#businessCard:hover #bcTitle,
+#portfolioProject:hover #ppTitle{
+  transform: translateY(-11.5vw);
+  border: 1vw solid var(--purple);
+  width: 100%;
+}
+#projectImitation:hover p,
+#cssZenGarden:hover p,
+#cyoa:hover p,
+#businessCard:hover p,
+#portfolioProject:hover p{
+  transform: translateY(-33vw);
+}
+#projectImitation p,
+#cssZenGarden p,
+#cyoa p,
+#businessCard p,
+#portfolioProject p{
+  position: absolute;
+  top: 33vw;
+  font-size: 2vw;
+  width: 23vw;
+  transition: all 500ms;
+  padding: 4vw;
+}
+#cssZenGarden{
+  grid-area: czg;
+}
+#cyoa{
+  grid-area: cyoa;
+}
+#businessCard{
+  grid-area: bc;
+}
+p{
+  line-height: 1.4;
+  font-size: 2vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+ol{
+  list-style: none;
+  font-size: 2.8vw;
+}
+.inactive{
+  display: none !important;
+}
+@media screen and (max-width: 800px) {
+  #banner{
+    flex-direction: column;
+    height: 50vh;
+    font-size: 10vh;
+  }
+  #about{
+    top: 3vh;
+  }
+  #me{
+    top: 1vh;
+  }
+  p{
+    font-size: 3vw;
+  }
+  #van{
+    width: 20vw;
+  }
+  #projectImitation p,
+  #cssZenGarden p,
+  #cyoa p,
+  #businessCard p{
+    padding: 2vw;
+  }
+}
+#julianContainer{
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 80vh;
+}
+#julianContainer img{
+  height: 80vh;
+}

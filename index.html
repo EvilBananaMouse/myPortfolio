@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="container">
+    <div id="banner">
+      <span>who is&nbsp;</span>
+      <span>julian henry</span>
+    </div>
+    <div id="menu">
+      <div id="aboutMe" onclick="aboutMeToggle()">
+        <div id="aboutMeText">
+          <span id="about">about</span>
+          <span id="me">me</span>
+        </div>
+        <div id="aboutMeTriangle"></div>
+      </div>
+      <div id="projects" onclick="projectsToggle()">
+        <div id="projectsText">projects</div>
+        <div id="projectsCircle"></div>
+      </div>
+      <div id="contact" onclick="contactToggle()">
+        <div id="contactText">contact</div>
+        <div id="contactSquare"></div>
+      </div>
+    </div>
+    <div id="display">
+      <div class="inactive" id="aboutMeExpanded">
+        <p>Hello world, it is a pleasure to meet you! I am Julian Henry.</p>
+        <p>I built this website to display and share my web design projects. I'm a relatively new programmer with
+          experience in C++, Java, Python, HTML, CSS, and JavaScript. </p>
+        <p>I am a senior at Innovation Academy High School planning to pursue a B.S. in computer science. The first
+          programming class I took was Middlesex Community College's Intro to Programming class, which made me fall in
+          love with the logical challenges coding presents. Since then, the computer science classes I took/am taking
+          are AP Computer Science A, Introduction to Quantum Computing, Introduction to Machine Learning, and Web Design
+          I. The summer before my senior year, I interned as a teacher assisant in an AP Computer Science class in the
+          UC Berekely Academic Talent Development Program.</p>
+        <p>I have three years of experience in the service/food industry, working at The Bedford/Burlington Melting Pot
+          as a busser, server, host, expediter, kitchen worker, and dishwasher. As a result of my hard work, I recieved
+          one of two Employee of the Month awards.</p>
+        <p>Outside of school, work, and programming, I love to lift weights, go outside in nature, listen to music, and
+          play videogames. Currently, I am replaying Red Dead Redemption 2 and rewatching The Sopranos.</p>
+        <p>Thank you so much for visiting my portfolio. Don't forget to check out some of my projects or visit my
+          contact page to reach out to me!</p>
+      </div>
+      <div id="projectsExpanded" class="inactive">
+        <div id="projectImitation"
+          onclick=location.href='https://project-imitation-julianhenry.iacs-wd1-fall-22-23.repl.co/'>
+          <div id="piTitle">&nbsp;Project Imitation&nbsp;</div>
+          <img src="/images/pi.png"><img>
+          <p>The goal of this Web Design I project was to create a webpage that was identical to a design in print media
+            of our choice using only HTML and CSS, and images sparingly.</p>
+        </div>
+        <div id="cssZenGarden" onclick=location.href='https://CSS-Zen-Garden-JulianHenry.iacs-wd1-fall-22-23.repl.co'>
+          <div id="czgTitle">&nbsp;CSS Zen Garden&nbsp;</div>
+          <img src="/images/czg.png"></img>
+          <p>For this Web Design I project, my task was to create three distinct designs for an HTML webpage, changing
+            only the CSS rules. My themes were Halloween, Cyberpunk, and Construction.</p>
+        </div>
+        <div id="cyoa" onclick=location.href='https://ChooseYourOwnAdventure-JulianHenry.iacs-wd1-fall-22-23.repl.co'>
+          <div id="cyoaTitle">&nbsp;Choose Your Own Adventure&nbsp;</div>
+          <img src="/images/cyoa.png"></img>
+          <p>In this Web Design I project, I demonstrated my knowledge of HTML pages and links by creating a Choose Your
+            Own Adventure website.</p>
+        </div>
+        <div id="businessCard" onclick=location.href='https://Business-Card-JulianHenry.iacs-wd1-fall-22-23.repl.co'>
+          <div id="bcTitle">&nbsp;Business Card&nbsp;</div>
+          <img src="/images/bc.png"></img>
+          <p>For this Web Design I project, I used four elements of design, constract, repitition, alignment, and
+            grouping, to create business cards.</p>
+        </div>
+        <div id="portfolioProject"
+          onclick=location.href='https://Portfolio-Project-JulianHenry.iacs-wd1-fall-22-23.repl.co'>
+          <div id="ppTitle">&nbsp;Portfolio Project&nbsp;</div>
+          <img src="/images/pp.png"></img>
+          <p>In my final Web Design I project, I was tasked with creating a portfolio of my best work in the class.
+            Enjoy ;)</p>
+        </div>
+      </div>
+      <div class="inactive" id="contactExpanded">
+        <p>Feel free to contact me with any offers, inquires, comments, questions, or feedback!</p>
+        <ol>
+          <li>EMAIL: jroberthenry@gmail.com</li>
+          <li>PHONE-NUMBER: (978)-726-2579</li>
+        </ol>
+        <div id="julianContainer">
+          <img src="/images/me.svg"></img>
+        </div>
+      </div>
+    </div>
+    <div id="road" class="inactive">
+      <div id="van">
+        <div class="tire" id="leftTire"></div>
+        <div class="tire" id="rightTire"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
